@@ -23,7 +23,7 @@ poolPvals <- function(x, gamma){
 
 
 # Benjamini, Heller, Yekutieli (2009)
-# pmat0: matrix of pvalues (m rows = features, s columns = subjects);
+# pmat0: matrix of pvalues (m rows = features, s columns = studies);
 # alpha: significance level
 # output: boolean vector of length m, keeping track of replicability
 
@@ -65,7 +65,7 @@ BHY <- function(pmat0, alpha=0.05){
 
 
 # adaFilter: Wang, Gui, Su, Sabatti, Owen (2020)
-# pmat0: matrix of pvalues (m rows = features, s columns = subjects);
+# pmat0: matrix of pvalues (m rows = features, s columns = studies);
 # alpha: significance level
 # output: boolean vector of length m, keeping track of replicability
 
@@ -90,7 +90,7 @@ adafilter <- function(pmat0, alpha=0.05){
 
 
 # ARI: Goeman and Solari (2011)
-# pmat0: matrix of pvalues (m rows = features, s columns = subjects);
+# pmat0: matrix of pvalues (m rows = features, s columns = studies);
 # alpha: significance level
 # output: boolean vector of length m, keeping track of replicability
 
