@@ -25,23 +25,25 @@ load("ovarian_cancer_data.RData")
 alpha <- 0.05
 
 res_bhy <- BHY(pmat0, alpha=alpha)
-round(prop.table(table(res_bhy) * 100, 2)
+round(prop.table(table(res_bhy) * 100), 2)
 
 res_ada <- adafilter(pmat0, alpha=alpha)
-round(prop.table(table(res_ada) * 100, 2)
+round(prop.table(table(res_ada) * 100), 2)
 
 res_ari <- ari(pmat0, alpha=alpha)
-round(prop.table(table(res_ari) * 100, 2)
+round(prop.table(table(res_ari) * 100), 2)
 ```
 
 ARI's results can also be reported for subsets. For instance, we consider the pathways PI3K-Akt and p53.
 
 ```r
+genes <- rownames(pmat0)
+
 # PI3K-Akt
-sel1 <- which(common_genes %in% pi3k_genes)
+sel1 <- which(genes %in% pi3k_genes)
 round(prop.table(table(res_ari[sel1])) * 100, 2)
 
 # p53
-sel2 <- which(common_genes %in% p53_genes)
+sel2 <- which(genes %in% p53_genes)
 round(prop.table(table(res_ari[sel2])) * 100, 2)
 ```
