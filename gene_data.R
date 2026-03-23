@@ -68,6 +68,8 @@ pmat0 <- cbind(
   pvals5[common_genes]
 )
 
+rownames(pmat0) <- common_genes
+
 
 # -------------------------------------------------------
 
